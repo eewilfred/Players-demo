@@ -10,7 +10,7 @@ import Combine
 
 class ViewController: UIViewController {
 
-    private let useCase =  PlayerInfoUseCase(networkService: NetworkService())
+    private let useCase =  PlayerListingUseCase(networkService: NetworkService())
     private var cancellables: [AnyCancellable] = []
     
     override func viewDidLoad() {

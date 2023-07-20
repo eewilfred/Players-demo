@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 // Adding protocol for unit testablilty
-protocol PlayerInfoUseCaseProtocol {
+protocol PlayerListingUseCaseProtocol {
 
     // Note: For now Infinite Load and Paginations are not considered as its not in requirements.
     /// Get all Players
@@ -22,7 +22,7 @@ protocol PlayerInfoUseCaseProtocol {
     func loadImage(from urlString: String) -> AnyPublisher<UIImage?, Never>
 }
 
-final class PlayerInfoUseCase: PlayerInfoUseCaseProtocol {
+final class PlayerListingUseCase: PlayerListingUseCaseProtocol {
     
     private let networkService: NetworkServiceProtocol
 

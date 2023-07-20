@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		E89771FF2A686DC50093F9AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89771FE2A686DC50093F9AB /* AppDelegate.swift */; };
 		E89772012A686DC50093F9AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772002A686DC50093F9AB /* SceneDelegate.swift */; };
-		E89772032A686DC50093F9AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772022A686DC50093F9AB /* ViewController.swift */; };
-		E89772062A686DC50093F9AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89772042A686DC50093F9AB /* Main.storyboard */; };
 		E89772082A686DC60093F9AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89772072A686DC60093F9AB /* Assets.xcassets */; };
 		E897720B2A686DC60093F9AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89772092A686DC60093F9AB /* LaunchScreen.storyboard */; };
 		E89772162A686DC60093F9AB /* player_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772152A686DC60093F9AB /* player_demoTests.swift */; };
@@ -25,8 +23,21 @@
 		E89772402A6874CD0093F9AB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897723F2A6874CD0093F9AB /* Player.swift */; };
 		E89772432A6876150093F9AB /* ResourceData+Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772422A6876150093F9AB /* ResourceData+Players.swift */; };
 		E89772452A6878180093F9AB /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772442A6878180093F9AB /* PlayerDetails.swift */; };
-		E89772472A687A000093F9AB /* PlayerInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772462A687A000093F9AB /* PlayerInfoUseCase.swift */; };
+		E89772472A687A000093F9AB /* PlayerListingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772462A687A000093F9AB /* PlayerListingUseCase.swift */; };
 		E89772492A688E530093F9AB /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772482A688E530093F9AB /* Scheduler.swift */; };
+		E897724D2A6913560093F9AB /* FlowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897724C2A6913560093F9AB /* FlowProtocol.swift */; };
+		E89772532A6914370093F9AB /* PlayerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772512A6914370093F9AB /* PlayerListViewController.swift */; };
+		E89772542A6914370093F9AB /* PlayerListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89772522A6914370093F9AB /* PlayerListViewController.xib */; };
+		E89772562A6915CF0093F9AB /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772552A6915CF0093F9AB /* AppFlowCoordinator.swift */; };
+		E89772582A6917380093F9AB /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772572A6917380093F9AB /* FlowCoordinatorProtocol.swift */; };
+		E897725A2A6917D50093F9AB /* PlayerListingFlowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772592A6917D50093F9AB /* PlayerListingFlowProtocol.swift */; };
+		E897725E2A69187E0093F9AB /* PlayerListingFlowScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897725D2A69187E0093F9AB /* PlayerListingFlowScreenFactory.swift */; };
+		E89772602A6919820093F9AB /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897725F2A6919820093F9AB /* ServiceProvider.swift */; };
+		E89772622A691D520093F9AB /* PlayerListingFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772612A691D520093F9AB /* PlayerListingFlowCoordinator.swift */; };
+		E89772652A69266B0093F9AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772632A69266B0093F9AB /* ViewController.swift */; };
+		E89772662A69266B0093F9AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89772642A69266B0093F9AB /* Main.storyboard */; };
+		E89772682A6926A40093F9AB /* PlayerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772672A6926A40093F9AB /* PlayerListViewModel.swift */; };
+		E897726A2A692CF60093F9AB /* PlayerListingViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772692A692CF60093F9AB /* PlayerListingViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +61,6 @@
 		E89771FB2A686DC50093F9AB /* player-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "player-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89771FE2A686DC50093F9AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E89772002A686DC50093F9AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E89772022A686DC50093F9AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E89772052A686DC50093F9AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E89772072A686DC60093F9AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E897720A2A686DC60093F9AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E897720C2A686DC60093F9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,8 +78,21 @@
 		E897723F2A6874CD0093F9AB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E89772422A6876150093F9AB /* ResourceData+Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResourceData+Players.swift"; sourceTree = "<group>"; };
 		E89772442A6878180093F9AB /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
-		E89772462A687A000093F9AB /* PlayerInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoUseCase.swift; sourceTree = "<group>"; };
+		E89772462A687A000093F9AB /* PlayerListingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListingUseCase.swift; sourceTree = "<group>"; };
 		E89772482A688E530093F9AB /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		E897724C2A6913560093F9AB /* FlowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowProtocol.swift; sourceTree = "<group>"; };
+		E89772512A6914370093F9AB /* PlayerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewController.swift; sourceTree = "<group>"; };
+		E89772522A6914370093F9AB /* PlayerListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerListViewController.xib; sourceTree = "<group>"; };
+		E89772552A6915CF0093F9AB /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		E89772572A6917380093F9AB /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		E89772592A6917D50093F9AB /* PlayerListingFlowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListingFlowProtocol.swift; sourceTree = "<group>"; };
+		E897725D2A69187E0093F9AB /* PlayerListingFlowScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListingFlowScreenFactory.swift; sourceTree = "<group>"; };
+		E897725F2A6919820093F9AB /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		E89772612A691D520093F9AB /* PlayerListingFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListingFlowCoordinator.swift; sourceTree = "<group>"; };
+		E89772632A69266B0093F9AB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E89772642A69266B0093F9AB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E89772672A6926A40093F9AB /* PlayerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewModel.swift; sourceTree = "<group>"; };
+		E89772692A692CF60093F9AB /* PlayerListingViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListingViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,14 +171,16 @@
 		E897722E2A686F530093F9AB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E897724B2A6913410093F9AB /* AppFlow */,
+				E897724A2A6912620093F9AB /* Screens */,
 				E89772412A6875E60093F9AB /* UseCases */,
 				E897723C2A6874A90093F9AB /* Models */,
 				E89772392A6872960093F9AB /* Utils */,
 				E897722F2A6871320093F9AB /* Services */,
 				E89771FE2A686DC50093F9AB /* AppDelegate.swift */,
 				E89772002A686DC50093F9AB /* SceneDelegate.swift */,
-				E89772022A686DC50093F9AB /* ViewController.swift */,
-				E89772042A686DC50093F9AB /* Main.storyboard */,
+				E89772642A69266B0093F9AB /* Main.storyboard */,
+				E89772632A69266B0093F9AB /* ViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -165,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				E89772302A6871450093F9AB /* Network */,
+				E897725F2A6919820093F9AB /* ServiceProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,9 +228,49 @@
 			isa = PBXGroup;
 			children = (
 				E89772422A6876150093F9AB /* ResourceData+Players.swift */,
-				E89772462A687A000093F9AB /* PlayerInfoUseCase.swift */,
+				E89772462A687A000093F9AB /* PlayerListingUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		E897724A2A6912620093F9AB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E89772502A6914110093F9AB /* PlayerListScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		E897724B2A6913410093F9AB /* AppFlow */ = {
+			isa = PBXGroup;
+			children = (
+				E897724C2A6913560093F9AB /* FlowProtocol.swift */,
+				E89772552A6915CF0093F9AB /* AppFlowCoordinator.swift */,
+				E89772572A6917380093F9AB /* FlowCoordinatorProtocol.swift */,
+				E897725C2A6918460093F9AB /* PlayerListingFlow */,
+			);
+			path = AppFlow;
+			sourceTree = "<group>";
+		};
+		E89772502A6914110093F9AB /* PlayerListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E89772512A6914370093F9AB /* PlayerListViewController.swift */,
+				E89772522A6914370093F9AB /* PlayerListViewController.xib */,
+				E89772672A6926A40093F9AB /* PlayerListViewModel.swift */,
+				E89772692A692CF60093F9AB /* PlayerListingViewState.swift */,
+			);
+			path = PlayerListScreen;
+			sourceTree = "<group>";
+		};
+		E897725C2A6918460093F9AB /* PlayerListingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				E89772592A6917D50093F9AB /* PlayerListingFlowProtocol.swift */,
+				E897725D2A69187E0093F9AB /* PlayerListingFlowScreenFactory.swift */,
+				E89772612A691D520093F9AB /* PlayerListingFlowCoordinator.swift */,
+			);
+			path = PlayerListingFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,8 +378,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E897720B2A686DC60093F9AB /* LaunchScreen.storyboard in Resources */,
+				E89772542A6914370093F9AB /* PlayerListViewController.xib in Resources */,
 				E89772082A686DC60093F9AB /* Assets.xcassets in Resources */,
-				E89772062A686DC50093F9AB /* Main.storyboard in Resources */,
+				E89772662A69266B0093F9AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,20 +405,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E89772472A687A000093F9AB /* PlayerInfoUseCase.swift in Sources */,
+				E89772472A687A000093F9AB /* PlayerListingUseCase.swift in Sources */,
 				E89772492A688E530093F9AB /* Scheduler.swift in Sources */,
 				E897723E2A6874C40093F9AB /* Players.swift in Sources */,
+				E89772582A6917380093F9AB /* FlowCoordinatorProtocol.swift in Sources */,
+				E89772652A69266B0093F9AB /* ViewController.swift in Sources */,
 				E89772322A6871650093F9AB /* ApiConstants.swift in Sources */,
 				E89772432A6876150093F9AB /* ResourceData+Players.swift in Sources */,
-				E89772032A686DC50093F9AB /* ViewController.swift in Sources */,
 				E897723B2A6872A90093F9AB /* Publisher+Utils.swift in Sources */,
 				E89772452A6878180093F9AB /* PlayerDetails.swift in Sources */,
+				E89772532A6914370093F9AB /* PlayerListViewController.swift in Sources */,
+				E897726A2A692CF60093F9AB /* PlayerListingViewState.swift in Sources */,
+				E89772562A6915CF0093F9AB /* AppFlowCoordinator.swift in Sources */,
 				E89772362A6871ED0093F9AB /* NetworkServiceProtocol.swift in Sources */,
+				E89772682A6926A40093F9AB /* PlayerListViewModel.swift in Sources */,
 				E89771FF2A686DC50093F9AB /* AppDelegate.swift in Sources */,
 				E89772342A6871A50093F9AB /* ResourceData.swift in Sources */,
+				E897725A2A6917D50093F9AB /* PlayerListingFlowProtocol.swift in Sources */,
 				E89772012A686DC50093F9AB /* SceneDelegate.swift in Sources */,
 				E89772402A6874CD0093F9AB /* Player.swift in Sources */,
 				E89772382A68721B0093F9AB /* NetworkService.swift in Sources */,
+				E897725E2A69187E0093F9AB /* PlayerListingFlowScreenFactory.swift in Sources */,
+				E89772602A6919820093F9AB /* ServiceProvider.swift in Sources */,
+				E897724D2A6913560093F9AB /* FlowProtocol.swift in Sources */,
+				E89772622A691D520093F9AB /* PlayerListingFlowCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,14 +465,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E89772042A686DC50093F9AB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E89772052A686DC50093F9AB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E89772092A686DC60093F9AB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

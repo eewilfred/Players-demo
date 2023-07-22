@@ -6,29 +6,62 @@
 //
 
 import SwiftUI
-
-@MainActor class PlayerDetailsViewModel: ObservableObject {
-    
-    @Published var details: PlayerDetails?
-    var slug: String
-    
-    init(slug: String) {
-        self.slug = slug
-    }
-}
-
+import Combine
 
 struct PlayerDetailsView: View {
     
     @StateObject var viewModel:  PlayerDetailsViewModel
+    @State var detailType: PlayerDetailType = .info
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            if viewModel.isLoading {
+                ProgressView()
+            }
+            else {
+                ZStack(alignment: .top) {
+                    VStack(spacing: 0) {
+                        PlayerDetailTopBarView(dismiss: dismiss)
+                        ScrollView(.vertical) {
+                            LazyVStack {
+                                PlayerInformationView(model: viewModel)
+                                PlayerInfoGlance(viewModel: viewModel)
+                                    .padding(.top, 74)
+                                TeamInfoView(viewModel: viewModel)
+                                    .padding(.top,16)
+                                PlayerDetailInfoSelectionView(type: $detailType)
+                                    .padding(.top, 8)
+                                    .padding(.leading, 13)
+                                switch detailType {
+                                case .info:
+                                    playerDetailedinformationView()
+                                case .statistics:
+                                    PlayerStatisticsView()
+                                case .event:
+                                    PlayerEventsView()
+                                case .media:
+                                    PlayerMediaView()
+                                }
+                                
+                            }
+                        }
+                        
+                    }
+                    GeometryReader { reader in
+                        Color("Primery")
+                            .frame(height: reader.safeAreaInsets.top, alignment: .top)
+                            .ignoresSafeArea()
+                    }
+                }
+            }
+        }
+        .environmentObject(viewModel)
     }
 }
 
 struct PlayerDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerDetailsView(viewModel: PlayerDetailsViewModel(slug: "hyz"))
+        PlayerDetailsView(viewModel:  PlayerDetailsViewModel(slug: "hyz"))
     }
 }

@@ -101,3 +101,11 @@ enum Section: String, Codable {
     case otherPerGame = "Other (per game)"
     case passes = "Passes"
 }
+
+
+extension PlayerDetails {
+    
+    func indicatorForKey(_ key: String) -> String? {
+        return self.indicators.first(where: { $0.key == key })?.value
+    }
+}

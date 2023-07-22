@@ -111,6 +111,7 @@
                 <outlet property="playerInfoLabel" destination="j3I-qz-tRE" id="Aua-wW-Q2D"/>
                 <outlet property="playerNameLabel" destination="YDx-Jc-kqq" id="Tjy-iv-u9u"/>
                 <outlet property="ratingLabel" destination="NHO-o6-vV7" id="746-aB-u9w"/>
+                <outlet property="topSpacing" destination="b0h-bR-zVx" id="2t5-4E-HoX"/>
             </connections>
             <point key="canvasLocation" x="-1.5267175572519083" y="25.704225352112676"/>
         </tableViewCell>

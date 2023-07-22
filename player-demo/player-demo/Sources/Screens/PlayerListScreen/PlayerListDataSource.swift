@@ -38,6 +38,7 @@ class PlayerListDataSource: UITableViewDiffableDataSource<PlayerListSections, Pl
                 
             case .playersInfo(let player):
                 let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerInfoTableViewCell", for: indexPath) as! PlayerInfoTableViewCell
+                cell.isFirstCell = indexPath.row == 0
                 cell.playerInfoViewModel = player
                 return cell
                 

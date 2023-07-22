@@ -20,6 +20,9 @@ class PlayerInfoTableViewCell: UITableViewCell {
     @IBOutlet private weak var playerNameLabel: UILabel!
     @IBOutlet private weak var playerInfoLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!
+    @IBOutlet private weak var topSpacing: NSLayoutConstraint!
+    
+    var isFirstCell = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +37,7 @@ class PlayerInfoTableViewCell: UITableViewCell {
     
     private func updateUI() {
         
+        topSpacing.constant = isFirstCell ? 8 : 4
         playerImageView.image = #imageLiteral(resourceName: "home.svg")
         playerNameLabel.text = playerInfoViewModel?.name
         playerInfoLabel.attributedText = playerInfoViewModel?.playerINfoAttributedText

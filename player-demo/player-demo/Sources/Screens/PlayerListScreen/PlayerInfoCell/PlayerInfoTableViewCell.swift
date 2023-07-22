@@ -21,6 +21,9 @@ class PlayerInfoTableViewCell: UITableViewCell {
     @IBOutlet private weak var playerInfoLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var topSpacing: NSLayoutConstraint!
+        
+    @IBOutlet weak var rightMarginTopSpace: NSLayoutConstraint!
+    @IBOutlet weak var leftMarginTopSpace: NSLayoutConstraint!
     
     var isFirstCell = false
     
@@ -42,6 +45,12 @@ class PlayerInfoTableViewCell: UITableViewCell {
         playerNameLabel.text = playerInfoViewModel?.name
         playerInfoLabel.attributedText = playerInfoViewModel?.playerINfoAttributedText
         ratingLabel.text = playerInfoViewModel?.rating
+        
+        if isFirstCell {
+            rightMarginTopSpace.constant = 20
+            leftMarginTopSpace.constant = 20
+            contentView.addCorenerRadius(raduis: 20, sides: [.topLeft, .topRight])
+        }
     }
     
     private func addShadows() {

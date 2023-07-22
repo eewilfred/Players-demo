@@ -51,7 +51,7 @@ class PlayerListDataSource: UITableViewDiffableDataSource<PlayerListSections, Pl
         snapshot.appendSections(PlayerListSections.allCases)
         snapshot.appendItems([topPlayers], toSection: .topPlayers)
         snapshot.appendItems(allPlayers, toSection: .allPlayers)
-        self.apply(snapshot, animatingDifferences: true)
+        self.apply(snapshot, animatingDifferences: false)
     }
 }
 

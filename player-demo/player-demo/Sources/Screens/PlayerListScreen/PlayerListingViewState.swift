@@ -12,6 +12,6 @@ enum PlayerListingViewState {
     
     case loading
     case failed
-    case success([Player])
+    case success([PlayerListRows])
     case noIteamsFoundOnSearch
 }

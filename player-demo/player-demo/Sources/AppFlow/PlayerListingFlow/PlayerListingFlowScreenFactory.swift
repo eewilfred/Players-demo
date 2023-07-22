@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class PlayerListingFlowScreenFactory {
     
-    func getPlayerListingScreen() -> PlayerListViewController {
-        let vc = PlayerListViewController(viewModel: PlayerListViewModel())
-        vc.view.backgroundColor = .blue
-        return vc
+    func getPlayerListingScreen(flowController: PlayerListingFlowProtocol) -> PlayerListViewController {
+        return PlayerListViewController(
+            viewModel: PlayerListViewModel(flowController: flowController)
+        )
     }
     
-    func getPlayerDetailsScreen(for slug: String) {
+    @MainActor func getPlayerDetailsScreen(for slug: String) -> UIHostingController<PlayerDetailsView> {
         
+        let PlayerDetailsSwiftUiView = PlayerDetailsView(viewModel: PlayerDetailsViewModel(slug: slug))
+        return UIHostingController(rootView: PlayerDetailsSwiftUiView)
     }
 }

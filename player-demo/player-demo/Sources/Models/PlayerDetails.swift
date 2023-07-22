@@ -84,11 +84,11 @@ struct Media: Codable {
 // MARK: - Statistic
 struct Statistic: Codable {
     let league: String
-    let data: [Datum]
+    let data: [StatisticData]
 }
 
 // MARK: - Datum
-struct Datum: Codable {
+struct StatisticData: Codable {
     let section: Section
     let data: [Indicator]
 }

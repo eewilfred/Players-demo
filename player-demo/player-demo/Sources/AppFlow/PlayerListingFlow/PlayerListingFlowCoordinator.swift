@@ -19,13 +19,16 @@ final class PlayerListingFlowCoordinator: PlayerListingFlowProtocol {
     
     func showPlayerListingHomeScreen() {
         
-        let playerListVC = screenFactory.getPlayerListingScreen()
+        let playerListVC = screenFactory.getPlayerListingScreen(flowController: self)
         let rootNavVC = UINavigationController(rootViewController: playerListVC)
         window.rootViewController = rootNavVC
         self.rootVC = rootNavVC
     }
     
-    func showPlayerDetailsScreen(for slug: String) {
+    @MainActor func showPlayerDetailsScreen(for slug: String) {
+        let detailsVc = screenFactory.getPlayerDetailsScreen(for: slug)
+        detailsVc.modalPresentationStyle = .fullScreen
+        rootVC?.pushViewController(detailsVc, animated: true)
     }
     
     func start() {

@@ -123,6 +123,8 @@ extension PlayerListViewController: UITableViewDelegate {
         let leadingSpace = playerSection == .topPlayers ? 21.0 : 18.0
         label.leadingAnchor.constraint(equalTo: bgView.leadingAnchor, constant: leadingSpace).isActive = true
         label.topAnchor.constraint(equalTo: bgView.topAnchor, constant: topSpace).isActive = true
+        bgView.backgroundColor = .white
+        label.backgroundColor = .white
         return bgView
     }
     

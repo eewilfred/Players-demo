@@ -18,6 +18,8 @@ struct PlayerDetailsView: View {
         NavigationView {
             if viewModel.isLoading {
                 ProgressView()
+                    .controlSize(.large)
+                    .tint(Color("Primery"))
             }
             else {
                 ZStack(alignment: .top) {

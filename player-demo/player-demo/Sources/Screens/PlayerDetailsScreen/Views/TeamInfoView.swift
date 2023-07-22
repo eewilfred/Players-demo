@@ -75,6 +75,7 @@ struct asyncImage: View {
             case .empty:
                 ProgressView()
                     .frame(width: width, height: height)
+                    .tint(Color("Primery"))
             case .success(let image):
                 image.resizable()
                     .aspectRatio(contentMode: .fit)

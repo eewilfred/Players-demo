@@ -9,8 +9,10 @@ import Foundation
 
 class ServiceProvider {
     let networkService: NetworkServiceProtocol
+    let imageLoader: ImageLoaderServiceProtocol
     
     init() {
         self.networkService = NetworkService()
+        self.imageLoader = ImageLoaderService()
     }
 }

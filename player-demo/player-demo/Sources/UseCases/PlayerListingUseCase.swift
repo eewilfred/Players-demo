@@ -25,9 +25,11 @@ protocol PlayerListingUseCaseProtocol {
 final class PlayerListingUseCase: PlayerListingUseCaseProtocol {
     
     private let networkService: NetworkServiceProtocol
+    private let imageService: ImageLoaderService
 
-    init(networkService: NetworkServiceProtocol) {
+    init(networkService: NetworkServiceProtocol, imageService: ImageLoaderService) {
         self.networkService = networkService
+        self.imageService = imageService
     }
     
     func getAllPlayers() -> AnyPublisher<Result<Players, Error>, Never> {

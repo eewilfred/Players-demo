@@ -60,6 +60,9 @@
 		E89772762A6972CD0093F9AB /* TopPlayersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772742A6972CD0093F9AB /* TopPlayersTableViewCell.swift */; };
 		E89772772A6972CD0093F9AB /* TopPlayersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89772752A6972CD0093F9AB /* TopPlayersTableViewCell.xib */; };
 		E89772792A6979D40093F9AB /* TopPlayersCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89772782A6979D40093F9AB /* TopPlayersCellViewModel.swift */; };
+		E8F268742A6D1070002B584E /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F268732A6D1070002B584E /* ImageLoaderService.swift */; };
+		E8F268762A6D1092002B584E /* ImageLoaderServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F268752A6D1092002B584E /* ImageLoaderServiceProtocol.swift */; };
+		E8F268782A6D116B002B584E /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F268772A6D116B002B584E /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +140,9 @@
 		E89772742A6972CD0093F9AB /* TopPlayersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPlayersTableViewCell.swift; sourceTree = "<group>"; };
 		E89772752A6972CD0093F9AB /* TopPlayersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopPlayersTableViewCell.xib; sourceTree = "<group>"; };
 		E89772782A6979D40093F9AB /* TopPlayersCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPlayersCellViewModel.swift; sourceTree = "<group>"; };
+		E8F268732A6D1070002B584E /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
+		E8F268752A6D1092002B584E /* ImageLoaderServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderServiceProtocol.swift; sourceTree = "<group>"; };
+		E8F268772A6D116B002B584E /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +286,7 @@
 		E897722F2A6871320093F9AB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E8F268722A6D105E002B584E /* ImageLoader */,
 				E89772302A6871450093F9AB /* Network */,
 				E897725F2A6919820093F9AB /* ServiceProvider.swift */,
 			);
@@ -369,6 +376,16 @@
 				E89772612A691D520093F9AB /* PlayerListingFlowCoordinator.swift */,
 			);
 			path = PlayerListingFlow;
+			sourceTree = "<group>";
+		};
+		E8F268722A6D105E002B584E /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				E8F268732A6D1070002B584E /* ImageLoaderService.swift */,
+				E8F268752A6D1092002B584E /* ImageLoaderServiceProtocol.swift */,
+				E8F268772A6D116B002B584E /* ImageCache.swift */,
+			);
+			path = ImageLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,6 +525,8 @@
 			files = (
 				E8603AB72A6B24DE004BD895 /* PlayerDetailsView.swift in Sources */,
 				E89772472A687A000093F9AB /* PlayerListingUseCase.swift in Sources */,
+				E8F268762A6D1092002B584E /* ImageLoaderServiceProtocol.swift in Sources */,
+				E8F268742A6D1070002B584E /* ImageLoaderService.swift in Sources */,
 				E89772492A688E530093F9AB /* Scheduler.swift in Sources */,
 				E897723E2A6874C40093F9AB /* Players.swift in Sources */,
 				E8603ACC2A6C78EB004BD895 /* PlayerEventsView.swift in Sources */,
@@ -542,6 +561,7 @@
 				E8603ABA2A6C35E5004BD895 /* playerDetailedinformationView.swift in Sources */,
 				E89772402A6874CD0093F9AB /* Player.swift in Sources */,
 				E89772382A68721B0093F9AB /* NetworkService.swift in Sources */,
+				E8F268782A6D116B002B584E /* ImageCache.swift in Sources */,
 				E89772762A6972CD0093F9AB /* TopPlayersTableViewCell.swift in Sources */,
 				E897725E2A69187E0093F9AB /* PlayerListingFlowScreenFactory.swift in Sources */,
 				E89772732A696E9C0093F9AB /* PlayerInfoCellViewModel.swift in Sources */,

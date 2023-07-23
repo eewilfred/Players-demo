@@ -13,6 +13,8 @@ final class NetworkService: NetworkServiceProtocol {
 
     init(session: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
         self.session = session
+        // Limit max connection at a time to 5
+        self.session.configuration.httpMaximumConnectionsPerHost = 5
     }
 
     @discardableResult

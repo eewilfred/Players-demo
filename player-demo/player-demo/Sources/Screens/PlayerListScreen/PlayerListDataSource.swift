@@ -33,7 +33,7 @@ class PlayerListDataSource: UITableViewDiffableDataSource<PlayerListSections, Pl
             switch item {
             case .topPlayerCell(let topPlayers):
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TopPlayersTableViewCell", for: indexPath) as! TopPlayersTableViewCell
-                cell.topPlayers = topPlayers.topPlayers
+                cell.topPlayers = topPlayers.cellViewModels
                 return cell
                 
             case .playersInfo(let player):

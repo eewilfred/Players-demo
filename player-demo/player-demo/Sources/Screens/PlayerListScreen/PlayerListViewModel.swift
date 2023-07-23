@@ -11,14 +11,15 @@ class PlayerListViewModel {
     
     private var state = PassthroughSubject<PlayerListingViewState,Never>()
     private var cancellables: [AnyCancellable] = []
-    private let useCase =  PlayerListingUseCase(networkService: NetworkService())
+    private let useCase: PlayerListingUseCaseProtocol
     
     private var players: [Player] = [] // for search with out using network.
     
     private var flowController: PlayerListingFlowProtocol
     
-    init(flowController: PlayerListingFlowProtocol) {
+    init(flowController: PlayerListingFlowProtocol, useCase: PlayerListingUseCaseProtocol ) {
         self.flowController = flowController
+        self.useCase = useCase
     }
     
     
@@ -29,7 +30,6 @@ class PlayerListViewModel {
         // MARK: Selection
         selection
             .sink { slug in
-                //TODO: navigate to details page
                 self.flowController.showPlayerDetailsScreen(for: slug)
             }
             .store(in: &cancellables)
@@ -77,7 +77,7 @@ class PlayerListViewModel {
     }
     
     func getTopPlayers() -> PlayerListRows {
-        return  .topPlayerCell(TopPlayersCellViewModel(from: players))
+        return  .topPlayerCell(TopPlayersCellViewModel(from: players, useCases: useCase))
     }
     
     private func notifyPlayerListupdate(_ players: [Player]) {
@@ -87,7 +87,7 @@ class PlayerListViewModel {
     private func mapPlayerToPlayerListRows(_ players: [Player]) -> [PlayerListRows] {
         players.map(
             {
-                PlayerListRows.playersInfo(PlayerInfoCellViewModel(from: $0))
+                PlayerListRows.playersInfo(PlayerInfoCellViewModel(from: $0, useCases: useCase))
             }
         )
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class PlayerInfoTableViewCell: UITableViewCell {
 
@@ -27,24 +28,42 @@ class PlayerInfoTableViewCell: UITableViewCell {
     
     var isFirstCell = false
     
+    private var cancalable: AnyCancellable?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         addShadows()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+//        super.setSelected(selected, animated: animated)
+    }
+    
+    override func prepareForReuse() {
+        topSpacing.constant = 4
+        playerImageView.image = UIImage(systemName: "person")
+        playerNameLabel.text = nil
+        playerInfoLabel.attributedText = nil
+        ratingLabel.text = nil
     }
     
     private func updateUI() {
         
         topSpacing.constant = isFirstCell ? 8 : 4
-        playerImageView.image = #imageLiteral(resourceName: "home.svg")
         playerNameLabel.text = playerInfoViewModel?.name
         playerInfoLabel.attributedText = playerInfoViewModel?.playerINfoAttributedText
         ratingLabel.text = playerInfoViewModel?.rating
+        
+        if let viewModel = playerInfoViewModel,
+           let image = viewModel.useCases.getSavedImage(from: viewModel.photo) {
+            playerImageView.image = image
+        } else {
+            cancalable = playerInfoViewModel?.useCases.loadImage(from: playerInfoViewModel?.photo)
+                .sink(receiveValue: { [weak self] image in
+                    self?.playerImageView.image = image
+                })
+        }
+        
         
         if isFirstCell {
             rightMarginTopSpace.constant = 20

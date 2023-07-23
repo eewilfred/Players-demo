@@ -34,7 +34,7 @@ class TopPlayersTableViewCell: UITableViewCell {
             collectionView: collectionView
         ) { (collectionView, indexPath, playerModel) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopPlayerCollectionViewCell.identifier, for: indexPath) as! TopPlayerCollectionViewCell
-            cell.playerModel = playerModel
+            cell.viewModel = playerModel
             return cell
         }
         

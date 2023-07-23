@@ -19,7 +19,9 @@ protocol PlayerListingUseCaseProtocol {
     func getPlayerDetail(slug: String) -> AnyPublisher<Result<PlayerDetails, Error>, Never>
 
     // Loads image
-    func loadImage(from urlString: String) -> AnyPublisher<UIImage?, Never>
+    func loadImage(from urlString: String?) -> AnyPublisher<UIImage?, Never>
+    
+    func getSavedImage(from urlString: String?) -> UIImage?
 }
 
 final class PlayerListingUseCase: PlayerListingUseCaseProtocol {
@@ -52,9 +54,25 @@ final class PlayerListingUseCase: PlayerListingUseCaseProtocol {
             .eraseToAnyPublisher()
     }
     
-    func loadImage(from urlString: String) -> AnyPublisher<UIImage?, Never> {
-        //TODO: get images
-        return Just(nil).eraseToAnyPublisher()
+    func loadImage(from urlString: String?) -> AnyPublisher<UIImage?, Never> {
+        guard let urlString = urlString,
+              let url = URL(string: urlString) else {
+            return .just(nil)
+        }
+        
+        return imageService.loadImage(from: url)
+            .subscribe(on: Scheduler.backgroundTaskScheduler)
+            .receive(on: Scheduler.mainTaskScheduler)
+            .share()
+            .eraseToAnyPublisher()
+    }
+    
+    func getSavedImage(from urlString: String?) -> UIImage? {
+        guard let urlString = urlString,
+              let url = URL(string: urlString) else {
+            return nil
+        }
+        return imageService.getCachedImage(url: url)
     }
     
     

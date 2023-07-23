@@ -27,4 +27,8 @@ final class ImageLoaderService: ImageLoaderServiceProtocol  {
             .print("Image loading \(url):")
             .eraseToAnyPublisher()
     }
+    
+    func getCachedImage(url: URL) -> UIImage? {
+        return cache.get(for: url)
+    }
 }

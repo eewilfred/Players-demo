@@ -12,6 +12,8 @@ final class PlayerListingFlowCoordinator: PlayerListingFlowProtocol {
     private let window: UIWindow
     private let screenFactory = PlayerListingFlowScreenFactory()
     private var rootVC: UINavigationController?
+    lazy private var playerListingUseCase = { PlayerListingUseCase(networkService: NetworkService(), imageService: ImageLoaderService())
+    }()
     
     init(window: UIWindow) {
         self.window = window
@@ -19,14 +21,14 @@ final class PlayerListingFlowCoordinator: PlayerListingFlowProtocol {
     
     func showPlayerListingHomeScreen() {
         
-        let playerListVC = screenFactory.getPlayerListingScreen(flowController: self)
+        let playerListVC = screenFactory.getPlayerListingScreen(flowController: self, useCase: playerListingUseCase)
         let rootNavVC = UINavigationController(rootViewController: playerListVC)
         window.rootViewController = rootNavVC
         self.rootVC = rootNavVC
     }
     
     @MainActor func showPlayerDetailsScreen(for slug: String) {
-        let detailsVc = screenFactory.getPlayerDetailsScreen(for: slug)
+        let detailsVc = screenFactory.getPlayerDetailsScreen(for: slug, useCase: playerListingUseCase)
         detailsVc.modalPresentationStyle = .fullScreen
         rootVC?.pushViewController(detailsVc, animated: true)
     }

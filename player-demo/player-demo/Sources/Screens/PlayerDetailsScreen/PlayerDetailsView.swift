@@ -62,8 +62,8 @@ struct PlayerDetailsView: View {
     }
 }
 
-struct PlayerDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerDetailsView(viewModel:  PlayerDetailsViewModel(slug: "hyz"))
-    }
-}
+//struct PlayerDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayerDetailsView(viewModel:  PlayerDetailsViewModel(slug: "hyz", useCase: PlayerListingUseCase(networkService: NetworkService(), imageService: ImageLoaderService())))
+//    }
+//}

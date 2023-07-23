@@ -81,7 +81,7 @@ struct asyncImage: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width:width, height: height)
             case .failure:
-                Image(systemName: "photo")
+                Image(systemName:"photo")
             @unknown default:
                 // as AsyncImagePhase enum is not frozen
                 EmptyView()

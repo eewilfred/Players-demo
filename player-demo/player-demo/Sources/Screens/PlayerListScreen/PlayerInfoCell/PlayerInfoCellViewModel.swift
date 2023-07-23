@@ -6,21 +6,23 @@
 //
 
 import UIKit
+import Combine
 
 struct PlayerInfoCellViewModel: Hashable {
-    
     let id = UUID()
     
     var name: String
     var clubName: String
     var positionName: String
     var rating: String
-    var photoURL: URL?
+    var photo: String?
     var playerINfoAttributedText: NSAttributedString
     var slug: String
+    let useCases: PlayerListingUseCaseProtocol
     
-    init(from player: Player) {
+    init(from player: Player, useCases: PlayerListingUseCaseProtocol) {
         
+        self.useCases = useCases
         self.name = player.name
         self.clubName = player.teamName
         self.positionName = player.positionName.rawValue
@@ -33,7 +35,7 @@ struct PlayerInfoCellViewModel: Hashable {
             self.rating = player.rating
         }
         
-        self.photoURL = URL(string: player.photo)
+        self.photo = player.photo
         self.playerINfoAttributedText = PlayerInfoCellViewModel.generatePlayerInfoAtributedText(player)
     }
     
@@ -57,5 +59,13 @@ struct PlayerInfoCellViewModel: Hashable {
             range: NSRange(location: 0, length: teamNameAttrStr.string.count)
         )
         return teamNameAttrStr
+    }
+    
+    static func == (lhs: PlayerInfoCellViewModel, rhs: PlayerInfoCellViewModel) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+            return hasher.combine(id)
     }
 }

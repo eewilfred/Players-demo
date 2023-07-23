@@ -18,10 +18,11 @@ import Combine
     
     
     var slug: String
-    private let useCase =  PlayerListingUseCase(networkService: NetworkService())
+    var useCase: PlayerListingUseCaseProtocol
     
-    init(slug: String) {
+    init(slug: String, useCase: PlayerListingUseCaseProtocol) {
         self.slug = slug
+        self.useCase = useCase
         useCase.getPlayerDetail(slug: slug)
             .sink { [weak self] result in
                 guard let self = self else { return }

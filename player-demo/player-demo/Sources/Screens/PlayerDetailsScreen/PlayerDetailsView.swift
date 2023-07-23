@@ -37,18 +37,16 @@ struct PlayerDetailsView: View {
                                     .padding(.leading, 13)
                                 switch detailType {
                                 case .info:
-                                    playerDetailedinformationView()
+                                    playerDetailedinformationView(viewModel: viewModel)
                                 case .statistics:
-                                    PlayerStatisticsView()
+                                    PlayerStatisticsView(viewModel: viewModel)
                                 case .event:
                                     PlayerEventsView()
                                 case .media:
                                     PlayerMediaView()
                                 }
-                                
                             }
                         }
-                        
                     }
                     GeometryReader { reader in
                         Color("Primery")

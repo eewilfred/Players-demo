@@ -7,23 +7,7 @@
 
 import SwiftUI
 
-@MainActor struct PlayerInfoGlanceModel {
-    
-    var age: String = ""
-    var marketPrice: String = ""
-    var number: String = ""
-    var rating: String = ""
-    
-    init(viewModel: PlayerDetailsViewModel) {
-        
-        guard let model = viewModel.details else { return }
-        self.age = model.indicatorForKey("Age") ?? ""
-        self.marketPrice = model.indicatorForKey("Market price") ?? ""
-        self.number = model.indicatorForKey("Player number") ?? ""
-        self.rating = model.indicatorForKey("Rating") ?? ""
-    }
-}
-
+//MARK: - PlayerInfoGlance
 
 @MainActor struct PlayerInfoGlance: View {
     
@@ -42,14 +26,12 @@ import SwiftUI
             GlanceCell(title: model.number, subTitle: "Number")
             
             VStack(alignment: .center, spacing: 0) {
-                // Light 28
                 Text(model.rating)
                   .font(
                     Font.custom("SF Pro", size: 28)
                       .weight(.light)
                   )
                   .foregroundColor(Color("Primery"))
-                // SemiBold 10
                 Text("Rating")
                   .font(
                     Font.custom("SF Pro", size: 10)
@@ -62,7 +44,9 @@ import SwiftUI
     }
 }
 
-struct GlanceCell: View {
+//MARK: - GlanceCell
+
+fileprivate struct GlanceCell: View {
     
     var title: String
     var subTitle: String
@@ -88,7 +72,9 @@ struct GlanceCell: View {
     }
 }
 
-struct GlanceCellStyle: ViewModifier {
+//MARK: - GlanceCellStyle
+
+fileprivate struct GlanceCellStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding(.horizontal, 16)

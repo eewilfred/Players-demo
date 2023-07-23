@@ -20,6 +20,10 @@ import Combine
     var slug: String
     var useCase: PlayerListingUseCaseProtocol
     
+    lazy var eventsViewModel : PlayerEventsViewModel = {
+        PlayerEventsViewModel(viewModel: self)
+    }()
+    
     init(slug: String, useCase: PlayerListingUseCaseProtocol) {
         self.slug = slug
         self.useCase = useCase

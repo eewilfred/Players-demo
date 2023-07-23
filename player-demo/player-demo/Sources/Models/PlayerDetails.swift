@@ -93,7 +93,7 @@ struct StatisticData: Codable {
     let data: [Indicator]
 }
 
-enum Section: String, Codable {
+enum Section: String, CaseIterable, Codable {
     case attacking = "Attacking"
     case cards = "Cards"
     case defending = "Defending"

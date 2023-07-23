@@ -45,7 +45,6 @@ import SwiftUI
                             .foregroundColor(.white)
                     }
                     .background(Color("Primery"))
-                    // SemiBold 15
                     Text(model.mainPostion)
                         .font(
                             Font.custom("SF Pro", size: 15)

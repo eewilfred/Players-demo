@@ -67,15 +67,13 @@ fileprivate struct PlayerStatisticsTypeSelector: View {
                     VStack {
                         HStack(alignment: .center, spacing: 4) {
                             Text(league)
-                                .font(
-                                    Font.custom("SF Pro", size: 15)
-                                        .weight(.semibold)
-                                )
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(
+                                .FontSFPro(
+                                    15,
+                                    .semibold,
                                     league == selectedType ? Color("Primery") :
                                         Color("Grey08")
                                 )
+                                .multilineTextAlignment(.center)
                                 .padding(.leading, 16)
                                 .padding(.trailing,16)
                         }

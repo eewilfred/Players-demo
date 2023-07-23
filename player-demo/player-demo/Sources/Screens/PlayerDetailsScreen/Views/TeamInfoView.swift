@@ -38,20 +38,10 @@ import SwiftUI
                        height: 48
             )
             VStack(alignment: .leading, spacing: 0) {
-                // Light 28
                 Text(model.teamName)
-                    .font(
-                        Font.custom("SF Pro", size: 28)
-                            .weight(.light)
-                    )
-                    .foregroundColor(Color("Grey Dark"))
-                // SemiBold 15
+                    .FontSFPro(28, .light, Color("Grey Dark"))
                 Text(model.playerCountry)
-                    .font(
-                        Font.custom("SF Pro", size: 15)
-                            .weight(.semibold)
-                    )
-                    .foregroundColor(Color("Grey03"))
+                    .FontSFPro(15, .semibold, Color("Grey03"))
             }
         }
     }
@@ -60,13 +50,15 @@ import SwiftUI
 struct asyncImage: View {
     
     var url: String
+    var contentMode: ContentMode
     var width: CGFloat?
     var height: CGFloat?
     
-    init(url: String, width: CGFloat? = nil, height: CGFloat? = nil) {
+    init(url: String, width: CGFloat? = nil, height: CGFloat? = nil, contentMode: ContentMode = .fit) {
         self.url = url
         self.width = width
         self.height = height
+        self.contentMode = contentMode
     }
     
     var body: some View {
@@ -78,7 +70,7 @@ struct asyncImage: View {
                     .tint(Color("Primery"))
             case .success(let image):
                 image.resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: contentMode)
                     .frame(width:width, height: height)
             case .failure:
                 Image(systemName:"photo")

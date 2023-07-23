@@ -18,16 +18,13 @@ struct playerDetailedinformationViewSection: View {
             
             if let discription = discription {
                 Text(discription)
-                  .font(
-                    Font.custom("SF Pro", size: 15)
-                      .weight(.light)
-                  )
-                  .foregroundColor(Color("Grey08"))
-                  .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.bottom, 16)
+                    .FontSFPro(15, .light, Color("Grey08"))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.bottom, 16)
             }
             ForEach(Array(information.enumerated()), id: \.offset) { index, element in
-                playerDetailedinformationViewCell(title: "\(element.key):", info: element.value)
+                //NOTE: i am running out of time to move this to a view model.
+                playerDetailedinformationViewCell(title: "\(element.key):", info: element.value.replacingOccurrences(of: ",", with: "."))
                 if index != information.count - 1 {
                     playerDetailedinformationViewCellSeperator()
                 }
@@ -37,9 +34,9 @@ struct playerDetailedinformationViewSection: View {
         .background(Color(red: 0.97, green: 0.98, blue: 0.98))
         .cornerRadius(12)
         .overlay(
-          RoundedRectangle(cornerRadius: 12)
-            .inset(by: 0.5)
-            .stroke(Color(red: 0.92, green: 0.92, blue: 0.92), lineWidth: 1)
+            RoundedRectangle(cornerRadius: 12)
+                .inset(by: 0.5)
+                .stroke(Color(red: 0.92, green: 0.92, blue: 0.92), lineWidth: 1)
         )
     }
 }
@@ -51,20 +48,16 @@ struct playerDetailedinformationSectionTitle: View {
     
     var body: some View {
         Text(title)
-          .font(
-            Font.custom("SF Pro", size: 28)
-              .weight(.light)
-          )
-          .foregroundColor(Color("Primery mid"))
+            .FontSFPro(28, .light, Color("Primery mid"))
     }
 }
 
 fileprivate struct playerDetailedinformationViewCellSeperator: View {
     var body: some View {
         Color("Grey01")
-          .frame(height: 1)
-          .padding(.leading, 1)
-          .padding(.trailing, 1)
+            .frame(height: 1)
+            .padding(.leading, 1)
+            .padding(.trailing, 1)
     }
 }
 
@@ -76,20 +69,15 @@ fileprivate struct playerDetailedinformationViewCell: View {
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
             Text(title)
-              .font(
-                Font.custom("SF Pro", size: 15)
-                  .weight(.semibold)
-              )
-              .foregroundColor(Color("Grey03"))
-              .frame(alignment: .leading)
-              .padding(.leading, 8)
+                .FontSFPro(15, .semibold, Color("Grey07"))
+                .frame(alignment: .leading)
+                .padding(.leading, 8)
             Spacer()
             Text(info)
-              .font(Font.custom("SF Pro", size: 15))
-              .multilineTextAlignment(.trailing)
-              .foregroundColor(.black)
-              .frame( alignment: .trailing)
-              .padding(.trailing, 8)
+                .FontSFPro(15, .regular, .black)
+                .multilineTextAlignment(.trailing)
+                .frame( alignment: .trailing)
+                .padding(.trailing, 8)
         }
     }
 }

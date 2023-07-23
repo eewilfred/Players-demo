@@ -20,8 +20,14 @@ import Combine
     var slug: String
     var useCase: PlayerListingUseCaseProtocol
     
+    // NOTE: code needs to be moved to factory. due to time constrains wont be doing it for now
+    //make a factory and move
     lazy var eventsViewModel : PlayerEventsViewModel = {
         PlayerEventsViewModel(viewModel: self)
+    }()
+    
+    lazy var mediaViewModel: PlayerMediaViewViewModel = {
+        PlayerMediaViewViewModel(viewModel: self)
     }()
     
     init(slug: String, useCase: PlayerListingUseCaseProtocol) {

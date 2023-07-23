@@ -17,26 +17,14 @@ struct PlayerEventViewcell: View {
             //Data and Round
             VStack(alignment: .center, spacing: 4) {
                 Text(model.date)
-                  .font(
-                    Font.custom("SF Pro", size: 13)
-                      .weight(.medium)
-                  )
+                    .FontSFPro(13, .medium, Color("Primery"))
                   .multilineTextAlignment(.trailing)
-                  .foregroundColor(Color("Primery"))
                 HStack(alignment: .center, spacing: 4) {
                     Text("Round")
-                      .font(
-                        Font.custom("SF Pro", size: 13)
-                          .weight(.medium)
-                      )
-                      .foregroundColor(Color("Grey03"))
+                        .FontSFPro(13, .medium, Color("Grey03"))
                     VStack(alignment: .center, spacing: 10) {
                         Text(model.round)
-                          .font(
-                            Font.custom("SF Pro", size: 15)
-                              .weight(.semibold)
-                          )
-                          .foregroundColor(Color(red: 0.15, green: 0.15, blue: 0.15))
+                            .FontSFPro(15, .semibold, Color("Grey Dark"))
                           .padding(4)
                     }
                     .padding(2)
@@ -82,26 +70,15 @@ struct PlayerEventViewcell: View {
     @ViewBuilder func getScoreCardFor(_ team: String, _ score: String, _ isAway: Bool = false) -> some View {
         HStack(spacing: 10) {
             Text(team)
-              .font(
-                Font.custom("SF Pro", size: 15)
-                  .weight(.light)
-              )
-              .foregroundColor(Color(red: 0.32, green: 0.32, blue: 0.32))
+                .FontSFPro(15, .light, Color("Grey08"))
               .frame(maxWidth: .infinity, alignment: .leading)
             Spacer()
             Text(score)
-                .font(
-                Font.custom("SF Pro", size: 15)
-                .weight(.bold)
-                )
+                .FontSFPro(15, .bold, Color.black)
             HStack(alignment: .center, spacing: 10) {
                 // SemiBold 10
                 Text(isAway ? "Away" : "Home")
-                  .font(
-                    Font.custom("SF Pro", size: 10)
-                      .weight(.semibold)
-                  )
-                  .foregroundColor(Color("Grey08"))
+                    .FontSFPro(10, .semibold, Color("Grey08"))
             }
             .padding(.horizontal, 4)
             .padding(.vertical, 2)

@@ -32,16 +32,16 @@
                                 <rect key="frame" x="0.0" y="136" width="136" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGW-TF-23P">
+                                <rect key="frame" x="8" y="142" width="120" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oK6-DI-DC6">
                                 <rect key="frame" x="8" y="166" width="120" height="12"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
                                 <color key="textColor" name="Primery mid"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGW-TF-23P">
-                                <rect key="frame" x="8" y="144" width="120" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -59,7 +59,7 @@
                             <constraint firstItem="VMf-bO-WSP" firstAttribute="leading" secondItem="vx6-AI-quT" secondAttribute="leading" id="lyq-JL-34a"/>
                             <constraint firstItem="oK6-DI-DC6" firstAttribute="top" secondItem="FGW-TF-23P" secondAttribute="bottom" constant="4" id="pF6-Od-Rpe"/>
                             <constraint firstItem="VMf-bO-WSP" firstAttribute="top" secondItem="vx6-AI-quT" secondAttribute="top" id="rjb-Jr-BpT"/>
-                            <constraint firstItem="FGW-TF-23P" firstAttribute="top" secondItem="VMf-bO-WSP" secondAttribute="bottom" constant="8" id="tab-tJ-CbC"/>
+                            <constraint firstItem="FGW-TF-23P" firstAttribute="top" secondItem="VMf-bO-WSP" secondAttribute="bottom" constant="6" id="tab-tJ-CbC"/>
                             <constraint firstAttribute="trailing" secondItem="FGW-TF-23P" secondAttribute="trailing" constant="8" id="zPW-vZ-j7M"/>
                         </constraints>
                     </view>

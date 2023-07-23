@@ -18,8 +18,8 @@ import SwiftUI
         
         guard let model = viewModel.details else { return }
         self.age = model.indicatorForKey("Age") ?? ""
-        self.marketPrice = model.indicatorForKey("Market price") ?? ""
+        self.marketPrice = (model.indicatorForKey("Market price") ?? "").replacingOccurrences(of: ",", with: ".")
         self.number = model.indicatorForKey("Player number") ?? ""
-        self.rating = model.indicatorForKey("Rating") ?? ""
+        self.rating = (model.indicatorForKey("Rating") ?? "").replacingOccurrences(of: ",", with: ".")
     }
 }

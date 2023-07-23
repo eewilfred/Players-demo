@@ -27,17 +27,9 @@ import SwiftUI
             
             VStack(alignment: .center, spacing: 0) {
                 Text(model.rating)
-                  .font(
-                    Font.custom("SF Pro", size: 28)
-                      .weight(.light)
-                  )
-                  .foregroundColor(Color("Primery"))
+                    .FontSFPro(28, .light, Color("Primery"))
                 Text("Rating")
-                  .font(
-                    Font.custom("SF Pro", size: 10)
-                      .weight(.semibold)
-                  )
-                  .foregroundColor(Color("Grey03"))
+                    .FontSFPro(10, .semibold, Color("Grey03"))
             }
             .modifier(GlanceCellStyle())
         }
@@ -53,20 +45,10 @@ fileprivate struct GlanceCell: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            // SemiBold 15
             Text(title)
-              .font(
-                Font.custom("SF Pro", size: 15)
-                  .weight(.semibold)
-              )
-              .foregroundColor(Color("Grey Dark"))
-            // SemiBold 10
+                .FontSFPro(15, .semibold, Color("Grey Dark"))
             Text(subTitle)
-              .font(
-                Font.custom("SF Pro", size: 10)
-                  .weight(.semibold)
-              )
-              .foregroundColor(Color("Grey03"))
+                .FontSFPro(10, .semibold, Color("Grey03"))
         }
         .modifier(GlanceCellStyle())
     }

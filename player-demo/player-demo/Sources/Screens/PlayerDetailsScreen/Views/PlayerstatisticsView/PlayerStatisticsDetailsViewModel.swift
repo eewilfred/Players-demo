@@ -33,10 +33,10 @@ import SwiftUI
     var data: [Indicator]
     
     func getIndicatorValueForKey(_ key: String) -> String? {
-        
-        data.first(where: {
+        let value = data.first(where: {
             $0.key == key
         })?.value
+        return value?.replacingOccurrences(of: ",", with: ".")
     }
     
     init(_ statistic: StatisticData) {

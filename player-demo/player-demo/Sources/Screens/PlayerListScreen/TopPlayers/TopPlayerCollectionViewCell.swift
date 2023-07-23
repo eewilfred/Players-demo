@@ -30,6 +30,7 @@ class TopPlayerCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         bgView.addCorenerRadius(raduis: 18, sides: [.topLeft, .topRight])
         bgView.addCorenerRadius(raduis: 8, sides: [.bottomLeft, .bottomRight])
+        playerImageView.addCorenerRadius(raduis: 18, sides: [.topLeft, .topRight])
         addShadows()
     }
     

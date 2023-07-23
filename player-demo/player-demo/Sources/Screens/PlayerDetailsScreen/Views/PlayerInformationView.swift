@@ -37,21 +37,14 @@ import SwiftUI
                 VStack(spacing: 0) {
                     HStack {
                         Text(model.playername)
-                            .font(
-                                Font.custom("SF Pro", size: 34)
-                                    .weight(.thin)
-                            )
+                            .FontSFPro(34, .thin, .white)
                             .frame(maxWidth: .infinity)
-                            .foregroundColor(.white)
+                            
                     }
                     .background(Color("Primery"))
                     Text(model.mainPostion)
-                        .font(
-                            Font.custom("SF Pro", size: 15)
-                                .weight(.semibold)
-                        )
+                        .FontSFPro(15, .semibold, .white)
                         .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
                         .background(Color("Primery"))
                     Color("Primery")
                         .background(Color("Primery"))

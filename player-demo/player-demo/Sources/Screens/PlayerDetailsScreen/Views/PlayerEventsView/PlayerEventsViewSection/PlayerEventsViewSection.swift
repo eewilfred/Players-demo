@@ -44,11 +44,7 @@ fileprivate struct PlayerEventsViewSectionHeader: View {
             asyncImage(url: logurl, width: 18, height: 18)
                 .padding(4)
             Text(teamName)
-                .font(
-                    Font.custom("SF Pro", size: 15)
-                        .weight(.semibold)
-                )
-                .foregroundColor(.white)
+                .FontSFPro(15, .semibold, Color.white)
         }
         .padding(4)
         .frame(maxWidth: .infinity, alignment: .topLeading)

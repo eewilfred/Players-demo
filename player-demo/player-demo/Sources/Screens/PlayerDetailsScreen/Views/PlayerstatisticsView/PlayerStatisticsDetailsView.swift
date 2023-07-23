@@ -41,11 +41,7 @@ fileprivate struct playedMatchStatisticsView: View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(alignment: .center) {
                 Text("Matches")
-                    .font(
-                        Font.custom("SF Pro", size: 15)
-                            .weight(.semibold)
-                    )
-                    .foregroundColor(.black)
+                    .FontSFPro(15, .semibold, Color.black)
                 Spacer()
                 getcellView(
                     title: model.getIndicatorValueForKey("Total played") ?? "",
@@ -79,19 +75,11 @@ fileprivate struct playedMatchStatisticsView: View {
     @ViewBuilder func getcellView(title: String, subtitle: String) -> some View {
         VStack(alignment: .center) {
             Text(title)
-                .font(
-                    Font.custom("SF Pro", size: 15)
-                        .weight(.semibold)
-                )
-                .foregroundColor(Color(red: 0.15, green: 0.15, blue: 0.15))
+                .FontSFPro(15, .semibold, Color("Grey Dark"))
             Spacer()
             Text(subtitle)
-                .font(
-                    Font.custom("SF Pro", size: 10)
-                        .weight(.semibold)
-                )
+                .FontSFPro(10, .semibold, Color("Grey03"))
                 .multilineTextAlignment(.center)
-                .foregroundColor(Color("Grey03"))
                 .frame(maxWidth: .infinity, minHeight: 24, maxHeight: 24, alignment: .center)
         }
         .padding(4)

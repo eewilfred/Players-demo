@@ -42,7 +42,7 @@ struct PlayerDetailInfoSelectionView: View {
                 }
                 .padding(.leading, 11)
             }
-            .padding(0)
+            .padding(.init(top: 2, leading: 0, bottom: 2, trailing: 11))
             .frame(alignment: .topLeading)
         }
     }
@@ -56,12 +56,13 @@ struct PlayerDetailInfoSelectionCell: View {
     var body: some View {
         HStack(alignment: .center, spacing: 4) {
             type.icon
-            .frame(width: 20, height: 20)
+                .frame(width: 20, height: 20)
             Text(type.rawValue)
-              .font(
-                Font.custom("SF Pro", size: 15)
-                  .weight(.semibold)
-              )
+                .FontSFPro(15,
+                           .semibold,
+                           isSelected ? Color("Primary Light") :
+                            Color("Grey Dark")
+                )
         }
         .foregroundColor(isSelected ? Color("Primary Light") : Color("Grey Dark"))
         .padding(.horizontal, 16)
@@ -71,9 +72,9 @@ struct PlayerDetailInfoSelectionCell: View {
         .cornerRadius(8)
         .shadow(color: .black.opacity(0.15), radius: 5, x: 2, y: 2)
         .overlay(
-          RoundedRectangle(cornerRadius: 8)
-            .inset(by: 0.5)
-            .stroke(Color(red: 0.92, green: 0.92, blue: 0.92), lineWidth: 1)
+            RoundedRectangle(cornerRadius: 8)
+                .inset(by: 0.5)
+                .stroke(Color(red: 0.92, green: 0.92, blue: 0.92), lineWidth: 1)
         )
     }
 }

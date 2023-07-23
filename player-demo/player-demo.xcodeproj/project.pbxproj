@@ -74,6 +74,10 @@
 		E8F2688E2A6D903F002B584E /* PlayerEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2688D2A6D903F002B584E /* PlayerEventsViewModel.swift */; };
 		E8F268902A6D906E002B584E /* PlayerEventViewcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2688F2A6D906E002B584E /* PlayerEventViewcell.swift */; };
 		E8F268922A6D9092002B584E /* PlayerEventViewcellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F268912A6D9092002B584E /* PlayerEventViewcellViewModel.swift */; };
+		E8F268972A6DA6A9002B584E /* PlayerMediaViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F268962A6DA6A9002B584E /* PlayerMediaViewViewModel.swift */; };
+		E8F2689A2A6DA6E9002B584E /* PlayerMediaViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F268992A6DA6E9002B584E /* PlayerMediaViewCellViewModel.swift */; };
+		E8F2689C2A6DA6F5002B584E /* PlayerMediaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2689B2A6DA6F5002B584E /* PlayerMediaViewCell.swift */; };
+		E8F2689E2A6DA7DD002B584E /* swiftUIText+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2689D2A6DA7DD002B584E /* swiftUIText+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +169,10 @@
 		E8F2688D2A6D903F002B584E /* PlayerEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEventsViewModel.swift; sourceTree = "<group>"; };
 		E8F2688F2A6D906E002B584E /* PlayerEventViewcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEventViewcell.swift; sourceTree = "<group>"; };
 		E8F268912A6D9092002B584E /* PlayerEventViewcellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEventViewcellViewModel.swift; sourceTree = "<group>"; };
+		E8F268962A6DA6A9002B584E /* PlayerMediaViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMediaViewViewModel.swift; sourceTree = "<group>"; };
+		E8F268992A6DA6E9002B584E /* PlayerMediaViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMediaViewCellViewModel.swift; sourceTree = "<group>"; };
+		E8F2689B2A6DA6F5002B584E /* PlayerMediaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMediaViewCell.swift; sourceTree = "<group>"; };
+		E8F2689D2A6DA7DD002B584E /* swiftUIText+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "swiftUIText+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +235,7 @@
 		E8603AB82A6C35D7004BD895 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E8603ACD2A6C7906004BD895 /* PlayerMediaView.swift */,
+				E8F268952A6DA697002B584E /* PlayerMediaView */,
 				E8F268882A6D8FA7002B584E /* PlayerEventsView */,
 				E8F2687B2A6D617F002B584E /* PlayerstatisticsView */,
 				E8F268802A6D6A1F002B584E /* playerDetailedinformationView */,
@@ -334,6 +342,7 @@
 				E897723A2A6872A90093F9AB /* Publisher+Utils.swift */,
 				E8603AB12A6AE3BA004BD895 /* UIVIew+Utils.swift */,
 				E8F268862A6D8B3D002B584E /* String+Dateformat.swift */,
+				E8F2689D2A6DA7DD002B584E /* swiftUIText+Util.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -467,6 +476,25 @@
 				E8F2688F2A6D906E002B584E /* PlayerEventViewcell.swift */,
 			);
 			path = PlayerEventViewcell;
+			sourceTree = "<group>";
+		};
+		E8F268952A6DA697002B584E /* PlayerMediaView */ = {
+			isa = PBXGroup;
+			children = (
+				E8F268962A6DA6A9002B584E /* PlayerMediaViewViewModel.swift */,
+				E8603ACD2A6C7906004BD895 /* PlayerMediaView.swift */,
+				E8F268982A6DA6D0002B584E /* PlayerMediaViewCell */,
+			);
+			path = PlayerMediaView;
+			sourceTree = "<group>";
+		};
+		E8F268982A6DA6D0002B584E /* PlayerMediaViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E8F268992A6DA6E9002B584E /* PlayerMediaViewCellViewModel.swift */,
+				E8F2689B2A6DA6F5002B584E /* PlayerMediaViewCell.swift */,
+			);
+			path = PlayerMediaViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -612,10 +640,12 @@
 				E897723E2A6874C40093F9AB /* Players.swift in Sources */,
 				E8603ACC2A6C78EB004BD895 /* PlayerEventsView.swift in Sources */,
 				E8F268872A6D8B3D002B584E /* String+Dateformat.swift in Sources */,
+				E8F2689E2A6DA7DD002B584E /* swiftUIText+Util.swift in Sources */,
 				E8603AC02A6C3671004BD895 /* PlayerInfoGlance.swift in Sources */,
 				E89772582A6917380093F9AB /* FlowCoordinatorProtocol.swift in Sources */,
 				E89772652A69266B0093F9AB /* ViewController.swift in Sources */,
 				E89772322A6871650093F9AB /* ApiConstants.swift in Sources */,
+				E8F2689A2A6DA6E9002B584E /* PlayerMediaViewCellViewModel.swift in Sources */,
 				E8603ABC2A6C362A004BD895 /* PlayerDetailInfoSelectionView.swift in Sources */,
 				E89772432A6876150093F9AB /* ResourceData+Players.swift in Sources */,
 				E897723B2A6872A90093F9AB /* Publisher+Utils.swift in Sources */,
@@ -627,6 +657,7 @@
 				E897726A2A692CF60093F9AB /* PlayerListingViewState.swift in Sources */,
 				E89772562A6915CF0093F9AB /* AppFlowCoordinator.swift in Sources */,
 				E8603ACE2A6C7906004BD895 /* PlayerMediaView.swift in Sources */,
+				E8F268972A6DA6A9002B584E /* PlayerMediaViewViewModel.swift in Sources */,
 				E8F268902A6D906E002B584E /* PlayerEventViewcell.swift in Sources */,
 				E8603AC42A6C36C0004BD895 /* PlayerDetailTopBarView.swift in Sources */,
 				E8603AAF2A6AD20D004BD895 /* TopPlayerCollectionViewCell.swift in Sources */,
@@ -650,6 +681,7 @@
 				E89772402A6874CD0093F9AB /* Player.swift in Sources */,
 				E89772382A68721B0093F9AB /* NetworkService.swift in Sources */,
 				E8F2687F2A6D69C2002B584E /* PlayerStatisticsDetailsViewModel.swift in Sources */,
+				E8F2689C2A6DA6F5002B584E /* PlayerMediaViewCell.swift in Sources */,
 				E8F268782A6D116B002B584E /* ImageCache.swift in Sources */,
 				E89772762A6972CD0093F9AB /* TopPlayersTableViewCell.swift in Sources */,
 				E8F268852A6D6CA0002B584E /* PlayerInfoGlanceModel.swift in Sources */,

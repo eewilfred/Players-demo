@@ -27,6 +27,11 @@ struct PlayerDetailsView: View {
                         PlayerDetailTopBarView(dismiss: dismiss)
                         ScrollView(.vertical) {
                             LazyVStack {
+                                /* View Model Passing can be avoided as shown for
+                                  the Last two views. But as i have not implemented a
+                                 factory to create models i am keeping it as is for
+                                 simiplicity.
+                                */
                                 PlayerInformationView(model: viewModel)
                                 PlayerInfoGlance(viewModel: viewModel)
                                     .padding(.top, 74)
@@ -60,8 +65,3 @@ struct PlayerDetailsView: View {
     }
 }
 
-//struct PlayerDetailsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlayerDetailsView(viewModel:  PlayerDetailsViewModel(slug: "hyz", useCase: PlayerListingUseCase(networkService: NetworkService(), imageService: ImageLoaderService())))
-//    }
-//}
